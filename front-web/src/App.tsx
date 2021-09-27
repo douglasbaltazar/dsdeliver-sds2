@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import Navbar from './Navbar';
 import './App.css';
+import Home from './Home';
 
 function App() {
-  useEffect(() => {
-    console.log('componente iniciou')
-  }, [])
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <Home />
+    </>
   );
 }
 
