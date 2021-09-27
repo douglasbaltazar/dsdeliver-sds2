@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Navbar from './Navbar';
 import './App.css';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   }, [])
   return (
     <div>
-      <h1>Hello</h1>
+      <Navbar />
     </div>
   );
 }
