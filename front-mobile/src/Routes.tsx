@@ -4,10 +4,12 @@ import { createStackNavigator, StackNavigationProp } from "@react-navigation/sta
 import Home from "./Home";
 import Orders from "./Orders";
 import Header from './Header';
+import OrderDetails from './OrderDetails';
 
 export type RootStackParamList = {
     Home: undefined;
     Orders: undefined;
+    OrderDetails: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -22,6 +24,10 @@ export const RootNavigator = () => {
             <Stack.Screen
                 name="Orders"
                 component={Orders}
+            />
+            <Stack.Screen
+                name="OrderDetails"
+                component={OrderDetails}
             />
         </Stack.Navigator>
     );
@@ -41,6 +47,7 @@ function Routes() {
             >
                 <Stack.Screen name="Home" component={Home}></Stack.Screen>
                 <Stack.Screen name="Orders" component={Orders}></Stack.Screen>
+                <Stack.Screen name="OrderDetails" component={OrderDetails}></Stack.Screen>
 
             </Stack.Navigator>
         </NavigationContainer>
