@@ -1,13 +1,26 @@
 import { OpenSans_700Bold } from '@expo-google-fonts/open-sans';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { RootStackParamList } from '../Routes';
 
+type homeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
 export default function Header() {
+
+    const navigation = useNavigation<homeScreenProp>();
+
+    const handleOnPress = () => {
+        navigation.navigate('Home');
+    }
     return (
-        <View style={styles.container}>
-            <Image source={require('../assets/logo.png')} />
-            <Text style={styles.text}>DS Delivery</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={handleOnPress}>
+            <View style={styles.container}>
+                <Image source={require('../assets/logo.png')} />
+                <Text style={styles.text}>DS Delivery</Text>
+            </View>
+        </TouchableWithoutFeedback>
     );
 }
 

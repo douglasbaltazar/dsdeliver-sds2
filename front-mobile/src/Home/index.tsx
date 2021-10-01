@@ -1,13 +1,15 @@
-import { OpenSans_700Bold } from '@expo-google-fonts/open-sans';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../Routes';
+
+type homeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 export default function Home() {
+    const navigation = useNavigation<homeScreenProp>();
 
-    const handleOnPress = () => {
-
-    }
 
     return (
         <>
@@ -21,8 +23,8 @@ export default function Home() {
                 </Text>
             </View>
             <View style={styles.footer}>
-                <RectButton style={styles.button} onPress={handleOnPress}>
-                    <Text style={styles.buttonText}>
+                <RectButton style={styles.button}>
+                    <Text style={styles.buttonText} onPress={() => navigation.navigate('Orders')}>
                         VER PEDIDOS
                     </Text>
                 </RectButton>
